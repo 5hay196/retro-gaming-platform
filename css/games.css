@@ -1,0 +1,25 @@
+/* =============================================
+   RETRO ARCADE PLATFORM — GAME-SPECIFIC STYLES
+   ============================================= */
+
+/* Pong canvas is wider */
+[data-current-game="pong"] #game-canvas  { width: 800px; height: 500px; }
+[data-current-game="pong"] #canvas-wrapper { border-color: #00ff88; box-shadow: 0 0 30px rgba(0,255,136,0.3); }
+
+/* Tetris gets a side panel */
+[data-current-game="tetris"] #game-screen { flex-direction: row; align-items: flex-start; justify-content: center; }
+[data-current-game="tetris"] #game-canvas { width: 300px; height: 600px; }
+[data-current-game="tetris"] #canvas-wrapper { border-color: #ffe600; box-shadow: 0 0 30px rgba(255,230,0,0.3); }
+[data-current-game="tetris"] #game-info { text-align: left; padding-top: 10px; padding-left: 16px; }
+
+/* Snake */
+[data-current-game="snake"] #game-canvas  { width: 480px; height: 480px; }
+[data-current-game="snake"] #canvas-wrapper { border-color: #00ff88; box-shadow: 0 0 30px rgba(0,255,136,0.3); }
+
+/* Breakout */
+[data-current-game="breakout"] #game-canvas  { width: 480px; height: 600px; }
+[data-current-game="breakout"] #canvas-wrapper { border-color: #ff6600; box-shadow: 0 0 30px rgba(255,102,0,0.3); }
+
+/* Space Invaders */
+[data-current-game="space-invaders"] #game-canvas  { width: 560px; height: 640px; }
+[data-current-game="space-invaders"] #canvas-wrapper { border-color: #ff00aa; box-shadow: 0 0 30px rgba(255,0,170,0.3); }

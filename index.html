@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Arcade Platform</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+    <div id="app">
+        <!-- HEADER -->
+        <header id="site-header">
+            <div class="header-left">
+                <button id="back-btn" class="btn hidden">&#9664; Menu</button>
+            </div>
+            <h1 class="logo">👾 RETRO ARCADE</h1>
+            <div class="header-right">
+                <span id="hud-score" class="hidden">Score: <strong id="score-val">0</strong></span>
+                <span id="hud-lives" class="hidden">Lives: <strong id="lives-val">3</strong></span>
+                <span id="hud-level" class="hidden">Level: <strong id="level-val">1</strong></span>
+            </div>
+        </header>
+
+        <!-- MENU SCREEN -->
+        <section id="menu-screen">
+            <p class="subtitle">Choose your game</p>
+
+            <div class="game-grid">
+                <div class="game-card" data-game="pong" tabindex="0">
+                    <div class="game-icon">🏓</div>
+                    <h3>PONG</h3>
+                    <p>Classic 2-player paddle action vs AI</p>
+                    <div class="high-score">Best: <span id="hs-pong">0</span></div>
+                </div>
+
+                <div class="game-card" data-game="tetris" tabindex="0">
+                    <div class="game-icon">🧩</div>
+                    <h3>TETRIS</h3>
+                    <p>Stack the falling blocks</p>
+                    <div class="high-score">Best: <span id="hs-tetris">0</span></div>
+                </div>
+
+                <div class="game-card" data-game="snake" tabindex="0">
+                    <div class="game-icon">🐍</div>
+                    <h3>SNAKE</h3>
+                    <p>Eat, grow, don't crash</p>
+                    <div class="high-score">Best: <span id="hs-snake">0</span></div>
+                </div>
+
+                <div class="game-card" data-game="breakout" tabindex="0">
+                    <div class="game-icon">🧱</div>
+                    <h3>BREAKOUT</h3>
+                    <p>Break all the bricks</p>
+                    <div class="high-score">Best: <span id="hs-breakout">0</span></div>
+                </div>
+
+                <div class="game-card" data-game="space-invaders" tabindex="0">
+                    <div class="game-icon">🛸</div>
+                    <h3>SPACE INVADERS</h3>
+                    <p>Defend Earth from the alien horde</p>
+                    <div class="high-score">Best: <span id="hs-space-invaders">0</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAME SCREEN -->
+        <section id="game-screen" class="hidden">
+            <div id="canvas-wrapper">
+                <canvas id="game-canvas" width="480" height="640"></canvas>
+            </div>
+            <div id="game-info">
+                <p id="control-hint"></p>
+            </div>
+        </section>
+
+        <!-- GAME OVER OVERLAY -->
+        <div id="game-over-overlay" class="hidden">
+            <div class="overlay-box">
+                <h2>GAME OVER</h2>
+                <p>Score: <span id="final-score">0</span></p>
+                <p id="new-record-msg" class="hidden">🏆 New High Score!</p>
+                <button id="play-again-btn" class="btn">Play Again</button>
+                <button id="menu-btn" class="btn btn-secondary">Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
