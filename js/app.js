@@ -24,8 +24,24 @@ const HS_KEY = 'retro-arcade-highscores';
 
 /** @returns {Record<string, number>} */
 function loadHighScores() {
-    try { return JSON.parse(localStorage.getItem(HS_KEY)) || {}; }
+    try {
+        const data = JSON.parse(localStorage.getItem(HS_KEY)) || {};
+        // Validate that all values are numbers
+        for (const key in data) {
+            if (typeof data[key] !== 'number') delete data[key];
+        }
+        return data;
+    }
     catch(_) { return {}; }
+}
+
+// ---- Service Worker ----
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('SW registered'))
+            .catch(err => console.log('SW failed', err));
+    });
 }
 
 /** @param {Record<string, number>} scores */
