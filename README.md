@@ -1,5 +1,7 @@
 # Retro Arcade Platform
 
+[![Play Demo](https://img.shields.io/badge/🎮_Play-Live_Demo-00e5ff?style=for-the-badge)](https://5hay196.github.io/retro-gaming-platform/)
+
 A unified browser-based gaming platform featuring 5 classic arcade games recreated in vanilla HTML5, CSS3, and JavaScript (ES6+).
 
 ## Games Included
